@@ -8,11 +8,13 @@
 
 function capSentence(text) {
   text = text.toLowerCase().split(' ');
-  const textCapped = [];
+  const textCapped = text.map((word) => {
+    return word[0].toUpperCase() + word.slice(1);
+  });
 
-  for (let word of text) {
-    textCapped.push(word.charAt(0).toUpperCase() + word.slice(1));
-  }
+  // for (let word of text) {
+  //   textCapped.push(word.charAt(0).toUpperCase() + word.slice(1));
+  // }
   return textCapped.join(' ');
 }
 
